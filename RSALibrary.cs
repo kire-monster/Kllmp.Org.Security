@@ -116,7 +116,7 @@ public class RSALibrary
             rsa.FromXmlString(xml);
             byte[] bytes = Convert.FromBase64String(text);
             byte[] descipher = rsa.Decrypt(bytes, false);
-            return Convert.ToBase64String(descipher);
+            return System.Text.Encoding.UTF8.GetString(descipher);
         }
         catch (FormatException ex)
         {
